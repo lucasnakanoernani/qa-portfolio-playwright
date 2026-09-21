@@ -1,0 +1,22 @@
+{
+  "name": "qa-portfolio-playwright",
+  "version": "1.0.0",
+  "description": "Projeto de Quality Engineering com Playwright, TypeScript, testes Web, API e CI/CD",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lucasnakanoernani/qa-portfolio-playwright.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lucasnakanoernani/qa-portfolio-playwright/issues"
+  },
+  "homepage": "https://github.com/lucasnakanoernani/qa-portfolio-playwright#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.63.0",
+    "@types/node": "^26.6.2"
+  }
+}
