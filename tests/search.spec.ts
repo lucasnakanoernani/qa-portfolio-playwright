@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test('Vai exibir o nome do produto pesquisado', async ({ page }) => {
+test('deve exibir o produto pesquisado pelo nome', async ({ page }) => {
   // Acessar a loja
   await page.goto('https://practicesoftwaretesting.com/');
 
@@ -10,8 +10,15 @@ test('Vai exibir o nome do produto pesquisado', async ({ page }) => {
   await searchInput.fill('Protective Gloves');
   await page.locator('[data-test="search-submit"]').click();
 
-  // Validar que o produto está visível
+  // Validar o termo apresentado na pesquisa
   await expect(
-    page.getByText('Protective Gloves', { exact: true })
-  ).toBeVisible();
+    page.locator('[data-test="search-term"]')
+  ).toHaveText('Protective Gloves');
+
+  // Localizar somente o nome do produto
+  const produto = page.locator('[data-test="product-name"]').filter({
+    hasText: /^\s*Protective Gloves\s*$/,
+  });
+
+  await expect(produto).toBeVisible();
 });
